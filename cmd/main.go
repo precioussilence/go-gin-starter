@@ -5,6 +5,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/precioussilence/go-gin-starter/internal/config"
+	"github.com/precioussilence/go-gin-starter/internal/repository"
 )
 
 var db = make(map[string]string)
@@ -69,8 +70,12 @@ func setupRouter() *gin.Engine {
 }
 
 func main() {
-	config.LocalConfig()
+	cfg, err := config.LocalConfig()
+	if err != nil {
+		panic("failed to local config: " + err.Error())
+	}
+	repository.InitDB(cfg)
 	r := setupRouter()
 	// Listen and Server in 0.0.0.0:8080
-	r.Run(":" + config.Config.GetString("server.port"))
+	r.Run(":" + cfg.Server.Port)
 }

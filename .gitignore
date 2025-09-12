@@ -1,0 +1,57 @@
+# ----------------------------
+# Go 编译产物
+# ----------------------------
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+
+# 可执行文件（通常构建输出）
+bin/
+dist/
+build/
+out/
+_output/
+
+# 构建和测试缓存
+.coverprofile
+.coverage
+coverage.*.out
+profile.out
+*.prof
+*.trace
+
+# 临时文件
+.history
+*.swp
+*.swo
+*~
+.swp
+.swo
+
+# ----------------------------
+# 日志与本地配置
+# ----------------------------
+logs/
+log/
+*.log
+.env
+.env.local
+.local
+config/config-demo.yaml
+.DS_Store
+
+# ----------------------------
+# 操作系统：Windows
+# ----------------------------
+Thumbs.db
+Thumbs.db:*
+ehthumbs_vista.db
+ehthumbs_vista.db:*
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+[Dd]esktop.ini
+::\$Extend\:*$*$*
