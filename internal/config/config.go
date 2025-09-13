@@ -29,9 +29,9 @@ func LocalConfig() (*Config, error) {
 		panic("load config.yaml failed: " + err.Error())
 	}
 
-	var config Config
-	if err := viper.Unmarshal(&config); err != nil {
+	var cfg Config
+	if err := viper.Unmarshal(&cfg); err != nil {
 		return nil, err
 	}
-	return &config, nil
+	return &cfg, nil
 }
